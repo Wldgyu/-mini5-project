@@ -1,0 +1,84 @@
+/*수정페이지*/
+
+.register-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.register-banner {
+    background: #0b5f82;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.register-box {
+    border: 3px solid #0b5f82;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.image-area {
+    width: 230px;
+    height: 260px;
+    background: #0b5f82;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.image-button{
+    width: 50px;
+    background: #0b5f82;
+    color: white;
+}
+.input-area {
+    flex: 1;
+}
+
+.input-title,
+.input-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-content {
+    min-height: 220px;
+}
+
+.btn-area {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.cancel-btn,
+.submit-btn {
+    padding: 10px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #ccc;
+}
+
+.submit-btn {
+    background: #0b5f82;
+    color: white;
+}
