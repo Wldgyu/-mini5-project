@@ -1,9 +1,5 @@
 version: 0.2
 
-env:
-  variables:
-    S3_BUCKET_NAME: a087013-frontend-website
-
 phases:
   install:
     runtime-versions:
@@ -15,6 +11,7 @@ phases:
     commands:
       - npm run build
 
-  post_build:
-    commands:
-      - aws s3 sync dist s3://$S3_BUCKET_NAME --delete
+artifacts:
+  base-directory: dist
+  files:
+    - '**/*'
