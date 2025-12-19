@@ -1,5 +1,4 @@
 version: 0.2
-
 env:
   variables:
     S3_BUCKET_NAME: "a087013-frontend-website"
