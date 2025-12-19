@@ -10,16 +10,22 @@ cache:
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 20
     commands:
-      - npm install
+      - npm ci
 
   build:
     commands:
-      - npm run build   # dist 폴더 생성
+      - npm run build
 
   post_build:
     commands:
+      - echo "Deploying to S3 bucket: $S3_BUCKET_NAME"
+      - ls -al
+      - ls -al dist
       - aws s3 sync dist s3://$S3_BUCKET_NAME --delete
 
 artifacts:
-  files: []
+  files:
+    - '**/*'
