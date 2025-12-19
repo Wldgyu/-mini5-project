@@ -1,18 +1,25 @@
 version: 0.2
 
+env:
+  variables:
+    S3_BUCKET_NAME: "a087013-frontend-website"
+
+cache:
+  paths:
+    - node_modules/*/
+
 phases:
   install:
-    runtime-versions:
-      nodejs: 20
     commands:
       - npm install
 
   build:
     commands:
-      - npm run build
-      - echo "Build completed."
+      - npm run build   # dist 폴더 생성
+
+  post_build:
+    commands:
+      - aws s3 sync dist s3://$S3_BUCKET_NAME --delete
 
 artifacts:
-  base-directory: dist
-  files:
-    - '**/*'
+  files: []
